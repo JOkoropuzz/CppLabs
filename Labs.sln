@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GaussSquare", "GaussSquare\GaussSquare.vcxproj", "{552B283D-6AEE-4A58-BD76-F34A9D906AFA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab1", "GaussSquare\GaussSquare.vcxproj", "{552B283D-6AEE-4A58-BD76-F34A9D906AFA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SuperPrimeNumber", "SuperPrimeNumber\SuperPrimeNumber.vcxproj", "{6D8B8563-E1C4-4151-A6AB-9DD40DC35F4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab2.1", "SuperPrimeNumber\SuperPrimeNumber.vcxproj", "{6D8B8563-E1C4-4151-A6AB-9DD40DC35F4D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab2.2", "SNILS\SNILS.vcxproj", "{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{6D8B8563-E1C4-4151-A6AB-9DD40DC35F4D}.Release|x64.Build.0 = Release|x64
 		{6D8B8563-E1C4-4151-A6AB-9DD40DC35F4D}.Release|x86.ActiveCfg = Release|Win32
 		{6D8B8563-E1C4-4151-A6AB-9DD40DC35F4D}.Release|x86.Build.0 = Release|Win32
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Debug|x64.ActiveCfg = Debug|x64
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Debug|x64.Build.0 = Debug|x64
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Debug|x86.ActiveCfg = Debug|Win32
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Debug|x86.Build.0 = Debug|Win32
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Release|x64.ActiveCfg = Release|x64
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Release|x64.Build.0 = Release|x64
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Release|x86.ActiveCfg = Release|Win32
+		{AC26312A-F87A-4B4E-AFC0-1010392B0BDB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
