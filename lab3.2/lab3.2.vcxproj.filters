@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SNILS2.0.cpp">
+    <ClCompile Include="CubRoot.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

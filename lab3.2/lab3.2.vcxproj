@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0a95022a-cfe5-433a-be55-eff670be7a58}</ProjectGuid>
-    <RootNamespace>lab31</RootNamespace>
+    <ProjectGuid>{9145937e-27f7-420a-8f50-3d6f717c22b6}</ProjectGuid>
+    <RootNamespace>lab32</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SNILS2.0.cpp" />
+    <ClCompile Include="CubRoot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
