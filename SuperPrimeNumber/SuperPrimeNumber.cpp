@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-static vector<bool> SieveOfEratosthenes(int n)
+vector<bool> SieveOfEratosthenes(int n)
 {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
@@ -27,7 +27,7 @@ static vector<bool> SieveOfEratosthenes(int n)
     return prime;
 }
 
-static bool IsPrime(int n)
+bool IsPrime(int n)
 {
     bool result = false;
     if (n > 1)
@@ -47,7 +47,7 @@ static bool IsPrime(int n)
     return result;
 }
 
-static bool IsSuperPrime(int n)
+bool IsSuperPrime(int n)
 {
     bool result = false;
     if (IsPrime(n))
@@ -86,5 +86,3 @@ int main()
         cout << "Число " << a << " НЕ является Супер Простым!";
     }
 }
-
-

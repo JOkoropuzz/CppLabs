@@ -3,7 +3,7 @@
 using namespace std;
 
 //Split method. Add validation and conversion of the entered snils number.
-static bool isCorrectSnils(long long snils)
+bool isCorrectSnils(long long snils)
 {
 	bool result = true;
 
@@ -65,7 +65,7 @@ static bool isCorrectSnils(long long snils)
 				else if (controlSum % 101 != 100)
 				{
 					result = false;
-					
+
 				}
 			}
 		}
@@ -89,5 +89,5 @@ int main()
 	{
 		cout << "Снилс с номером: " << snils << " НЕ КОРРЕКТНЫЙ";
 	}
-	
+
 }

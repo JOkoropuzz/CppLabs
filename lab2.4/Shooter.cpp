@@ -1,70 +1,32 @@
 ﻿#include <iostream>
 using namespace std;
 
-class Target
+
+int Hit(int xHit, int yHit, int xCenter, int yCenter, int radius, int score)
 {
-private:
-    int x, y, radius, score;
-
-public:
-    Target(int r, int s)
+    bool result = (pow((xHit - xCenter), 2) + pow((yHit - yCenter), 2)) <= pow(radius, 2);
+    if (result)
     {
-        x = 0;
-        y = 0;
-        radius = r;
-        score = s;
+        return score;
     }
-    Target(int xVal, int yVal, int r, int s)
+    else
     {
-        x = xVal;
-        y = yVal;
-        radius = r;
-        score = s;
+        return 0;
     }
 
-    int getCenterX() const { return x; }
-    int getCenterY() const { return y; }
-    int getRadius() const { return radius; }
-    int getScore() const { return score; }
-
-    void setCenterY(int value) { y = value; }
-    void setCenetX(int value) { x = value; }
-    void setRadius(int value) { radius = value; }
-    void setScore(int value) { score = value; }
-
-    int Hit(int xHit, int yHit)
-    {
-        bool result = (pow((xHit - x), 2) + pow((yHit - y), 2)) <= pow(radius, 2);
-        if (result)
-        {
-            return score;
-        }
-        else
-        {
-            return 0;
-        }
-
-    }
-};
-
+}
 
 int main()
 {
     system("chcp 1251");
     srand(time(0));
 
-    int randomCoef = 1;
+    int randomShotCoef = 2;
     int randomCenterRange = 10;
     int magazin = 5;
 
-    
-
     int xCenter = -randomCenterRange + rand() % (randomCenterRange + randomCenterRange + 1);
     int yCenter = -randomCenterRange + rand() % (randomCenterRange + randomCenterRange + 1);
-
-    Target t1{xCenter, yCenter, 2, 10};
-    Target t2{xCenter, yCenter, 4, 7};
-    Target t3{xCenter, yCenter, 8, 5};
 
     int userScore = 0;
     int userCountShots = 0;
@@ -80,20 +42,23 @@ int main()
         cout << "Сделайте выстрел!" << endl;
         cin >> xHit >> yHit;
 
-        if (t1.Hit(xHit, yHit) != 0)
+        xHit += -randomShotCoef + rand() % (randomShotCoef + randomShotCoef + 1);
+        yHit += -randomShotCoef + rand() % (randomShotCoef + randomShotCoef + 1);
+
+        if (Hit(xHit, yHit, xCenter, yCenter, 2, 10) != 0)
         {
-            cout << "Попадание: " << t1.Hit(xHit, yHit) << " очков!" << endl;
-            userScore += t1.Hit(xHit, yHit);
+            cout << "Попадание: " << Hit(xHit, yHit, xCenter, yCenter, 2, 10) << " очков!" << endl;
+            userScore += Hit(xHit, yHit, xCenter, yCenter, 2, 10);
         }
-        else if (t2.Hit(xHit, yHit) != 0)
+        else if (Hit(xHit, yHit, xCenter, yCenter, 4, 7) != 0)
         {
-            cout << "Попадание: " << t2.Hit(xHit, yHit) << " очков!" << endl;
-            userScore += t2.Hit(xHit, yHit);
+            cout << "Попадание: " << Hit(xHit, yHit, xCenter, yCenter, 4, 7) << " очков!" << endl;
+            userScore += Hit(xHit, yHit, xCenter, yCenter, 4, 7);
         }
-        else if (t3.Hit(xHit, yHit) != 0)
+        else if (Hit(xHit, yHit, xCenter, yCenter, 8, 5) != 0)
         {
-            cout << "Попадание: " << t3.Hit(xHit, yHit) << " очков!" << endl;
-            userScore += t3.Hit(xHit, yHit);
+            cout << "Попадание: " << Hit(xHit, yHit, xCenter, yCenter, 8, 5) << " очков!" << endl;
+            userScore += Hit(xHit, yHit, xCenter, yCenter, 8, 5);
         }
         else
         {
@@ -114,8 +79,6 @@ int main()
     {
         cout << "Вы новичок." << endl;
     }
-        
-    
+
+
 }
-
-
