@@ -35,8 +35,10 @@ int main()
     {
         case -1:
             cout << "Корней уравнения нет";
+            break;
         case 0:
             cout << "Корень уравнения один x1 = x2 = "<< x1;
+            break;
         case 1:
             cout << "Корни уравнения x1 = " << x1 << ", x2 = " << x2;
         default:
