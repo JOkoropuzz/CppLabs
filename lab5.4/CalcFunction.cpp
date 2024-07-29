@@ -3,74 +3,66 @@
 #include <sstream>
 using namespace std;
 
-string Calculator(string request)
+
+int main(int argc, char* argv[])
 {
-    string argc[4];
+    system("chcp 1251");
+
+
     int Num = 0;
     char prev = ' ';
     int a, b, result;
 
-    for (int i = 0; i < request.size(); i++) 
+    if (argc != 5)
     {
-        if (request[i] != ' ' && prev == ' ') Num++;
-        prev = request[i];
+        cout << "Не корректный ввод.Количество аргументов должно быть равно 4.!";
+        return -1;
     }
+        
 
-    if (Num != 4) return "Не корректный ввод!";
-    
     int i = 0;
-    stringstream ssin(request);
-    while (ssin.good() && i < 4) {
-        ssin >> argc[i];
+    stringstream ssin(argc);
+    while (ssin.good() && i < 5) {
+        ssin >> argv[i];
         ++i;
     }
 
-    if (argc[0] != "nameProg") return "Не известное имя функции!";
+    
+
+    if (strncmp(argv[1], "nameProg", 9) != 0)
+    {
+        cout << "Не известное имя функции!";
+        return -1;
+    }
 
     try
     {
-        a = stoi(argc[2]);
-        b = stoi(argc[3]);
+        a = stoi(argv[3]);
+        b = stoi(argv[4]);
     }
     catch (const invalid_argument& e)
     {
-        return "Вводимые значения должны быть целочисленными!";
+        cout << "Вводимые значения должны быть целочисленными!";
+        return -1; 
     }
 
-    if (argc[1] == "-a")
+    if (strncmp(argv[2], "-a", 3) == 0)
     {
         result = a + b;
-        return to_string(result);
+        cout << result;
+        return result;
     }
-    else if (argc[1] == "-m")
+    else if (strncmp(argv[2], "-m", 3) == 0)
     {
         result = a * b;
-        return to_string(result);
+        cout << result;
+        return result;
     }
     else
     {
-        return "Оператора " + argc[1] + " не существует!";
+        cout << "Оператора не существует!";
+        return -1;
     }
-
-
-}
-
-int main()
-{
-    system("chcp 1251");
-
-    cout << Calculator("nameProg -a 4 5") << endl;
-
-    cout << Calculator("nameProg -m 4 5") << endl;
-
-    cout << Calculator("nameProgg -a 4 5") << endl;
-
-    cout << Calculator("nameProg -a 4 5 5") << endl;
-
-    cout << Calculator("nameProg -a f 5") << endl;
-
-    cout << Calculator("nameProg -f 4 5") << endl;
-
 
     return 0;
 }

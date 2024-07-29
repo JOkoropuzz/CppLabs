@@ -1,4 +1,8 @@
-﻿using namespace std;
+﻿#include <iostream>
+#include <string>
+#include <sstream>
+#include <array>
+using namespace std;
 
 double GaussSqare(array<pair<int, int>, 5> points)
 {
@@ -14,6 +18,7 @@ int main()
 {
 
     system("chcp 1251");
+
     cout << "Расчёт площяди пятиугольника по формуле Гаусса" << endl;
 
 
@@ -22,7 +27,7 @@ int main()
 
     for (int i = 0; i < points.size(); i++)
     {
-        double a, b;
+        int a, b;
         cout << "Введите координаты X и Y вершины через пробел: ";
         cin >> a >> b;
         points[i].first = a;
