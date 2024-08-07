@@ -32,6 +32,25 @@ public:
 		return phone_number;
 	}
 
+	string get_last_name() const
+	{
+		return last_name;
+	}
+
+	virtual string get_class_name()
+	{
+		return "Person";
+	}
+
+	virtual string get_data()
+	{
+		ostringstream ss;
+		ss << "Фамилия: " << last_name;
+		ss << " Имя: " << name;
+		ss << " Отчество: " << second_name;
+		return ss.str();
+	}
+
 private:
 	string name; // имя
 	string last_name; // фамилия

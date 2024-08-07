@@ -14,19 +14,32 @@ public:
 		this->scores = scores;
 	}
 	// Получение среднего балла студента
-	float get_average_score()
+	double get_average_score()
 	{
 		// Общее количество оценок
 		size_t count_scores = this->scores.size();
 		// Сумма всех оценок студента
 		size_t sum_scores = 0;
 		// Средний балл
-		float average_score;
+		double average_score;
 		for (size_t i = 0; i < count_scores; ++i) {
 			sum_scores += this->scores[i];
 		}
-		average_score = (float)sum_scores / (float)count_scores;
+		average_score = (double)sum_scores / (double)count_scores;
 		return average_score;
+	}
+
+	string get_class_name()
+	{
+		return "Student";
+	}
+
+	string print_data()
+	{
+		ostringstream ss;
+		ss << Person::get_data();
+		ss << " Оценки студента: " << get_average_score();
+		return ss.str();
 	}
 
 private:
